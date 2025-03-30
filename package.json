@@ -1,5 +1,5 @@
 {
-  "name": "shards-nextjs",
+  "name": "@singharaj-usai/shards-nextjs",
   "version": "1.0.0",
   "description": "A Bootstrap 5 and Next.js 15 compatible version of Shards React UI kit.",
   "type": "module",

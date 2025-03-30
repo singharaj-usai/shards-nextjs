@@ -12,9 +12,9 @@ A modern Bootstrap 5 and Next.js 15 compatible version of Shards React. This is 
 ## Installation
 
 ```bash
-npm install shards-nextjs bootstrap
+npm install @singharaj-usai/shards-nextjs bootstrap
 # or
-yarn add shards-nextjs bootstrap
+yarn add @singharaj-usai/shards-nextjs bootstrap
 ```
 
 ## Usage with Next.js App Router
