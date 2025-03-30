@@ -1,3 +1,58 @@
+# Bootstrap 5 Shards React for Next.js
+
+A modern Bootstrap 5 and Next.js 15 compatible version of Shards React. This is a fork of [DesignRevision/shards-react](https://github.com/DesignRevision/shards-react) updated to work with Bootstrap 5 and Next.js App Router.
+
+## Features
+
+- Full compatibility with Bootstrap 5
+- Support for Next.js 15 App Router with `use client` directives
+- Updated component designs and APIs
+- Modern React 18 support
+
+## Installation
+
+```bash
+npm install shards-nextjs bootstrap
+# or
+yarn add shards-nextjs bootstrap
+```
+
+## Usage with Next.js App Router
+
+```jsx
+// app/components/MyComponent.js
+'use client';
+
+import { Container, Button } from 'shards-nextjs/next-compat/use-client';
+
+export default function MyComponent() {
+  return (
+    <Container>
+      <Button theme="primary">Click Me</Button>
+    </Container>
+  );
+}
+```
+
+Import Bootstrap CSS in your layout file:
+
+```jsx
+// app/layout.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+## License
+
+MIT © [Your Name]
+
 <p align="center">
 <img src="logo.jpg" width="230" />
 </p>

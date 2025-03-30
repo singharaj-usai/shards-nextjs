@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import Transition from "react-transition-group/Transition";
+import { Transition } from "react-transition-group";
 import pick from "lodash.pick";
 import omit from "lodash.omit";
 
@@ -18,6 +18,8 @@ class Collapse extends React.Component {
     this.state = {
       height: null
     };
+
+    this.nodeRef = React.createRef();
   }
 
   render() {
@@ -28,15 +30,16 @@ class Collapse extends React.Component {
       navbar,
       children,
       innerRef,
-      ...attrs
+      ...attributes
     } = this.props;
 
     const { height } = this.state;
-    const transitionProps = pick(attrs, TRANSITION_KEYS);
-    const childProps = omit(attrs, TRANSITION_KEYS);
+    const transitionProps = pick(attributes, TRANSITION_KEYS);
+    const childProps = omit(attributes, TRANSITION_KEYS);
 
     return (
       <Transition
+        nodeRef={this.nodeRef}
         {...transitionProps}
         in={open}
         onEntering={this.onEntering.bind(this)}
@@ -45,24 +48,30 @@ class Collapse extends React.Component {
         onExiting={this.onExiting.bind(this)}
         onExited={this.onExited.bind(this)}
       >
-        {status => {
-          const style = {
-            height: height || null,
-            display: status !== "exited" && "block"
+        {state => {
+          const collapseClass = {
+            'collapse': true,
+            'collapsing': state === 'entering' || state === 'exiting',
+            'show': state === 'entered' || state === 'entering'
           };
-
+          
+          const style = height === null ? null : { height };
+          
           const classes = classNames(
             className,
-            TRANSITION_CLASS_MAP[status] || "collapse",
+            TRANSITION_CLASS_MAP[state] || "collapse",
             navbar && "navbar-collapse"
           );
 
           return (
             <Tag
+              ref={node => {
+                this.nodeRef.current = node;
+                if (innerRef) innerRef(node);
+              }}
+              style={{ ...style, ...childProps.style }}
+              className={classNames(classes, collapseClass)}
               {...childProps}
-              style={{ ...childProps.style, ...style }}
-              className={classes}
-              ref={innerRef}
             >
               {children}
             </Tag>
@@ -72,14 +81,14 @@ class Collapse extends React.Component {
     );
   }
 
-  onEntering(node, isAppearing) {
+  onEntering(node) {
     this.setState({ height: getNodeHeight(node) });
-    this.props.onEntering(node, isAppearing);
+    this.props.onEntering(node);
   }
 
-  onEntered(node, isAppearing) {
+  onEntered(node) {
     this.setState({ height: null });
-    this.props.onEntered(node, isAppearing);
+    this.props.onEntered(node);
   }
 
   onExit(node) {

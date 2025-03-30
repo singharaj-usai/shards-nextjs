@@ -6,6 +6,9 @@ import { Popper } from "react-popper";
 import { DropdownContext } from "./DropdownContext";
 import { DROPDOWN_POSITION_MAP } from "../constants";
 
+/**
+ * The dropdown menu component.
+ */
 class DropdownMenu extends React.Component {
   render() {
     const {
@@ -17,6 +20,7 @@ class DropdownMenu extends React.Component {
       small,
       modifiers,
       persist,
+      strategy,
       ...attrs
     } = this.props;
 
@@ -24,9 +28,16 @@ class DropdownMenu extends React.Component {
       className,
       "dropdown-menu",
       small && "dropdown-menu-small",
-      right && "dropdown-menu-right",
+      right && "dropdown-menu-end",
       this.context.open && "show"
     );
+
+    let dataAttributes = {};
+    if (this.context.direction === "down" && right) {
+      dataAttributes = {
+        "data-bs-popper": "static"
+      };
+    }
 
     if (persist || (this.context.open && !this.context.inNavbar)) {
       const pos1 =
@@ -51,7 +62,7 @@ class DropdownMenu extends React.Component {
             <div
               ref={ref}
               className={classes}
-              x-placement={placement}
+              data-bs-popper={placement}
               aria-hidden={!this.context.open}
               tabIndex="-1"
               role="menu"
@@ -64,7 +75,13 @@ class DropdownMenu extends React.Component {
     }
 
     return (
-      <Tag tabIndex="-1" role="menu" {...attrs} className={classes}>
+      <Tag 
+        tabIndex="-1"
+        role="menu"
+        {...attrs}
+        {...dataAttributes}
+        className={classes}
+      >
         {children}
       </Tag>
     );

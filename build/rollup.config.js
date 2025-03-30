@@ -1,12 +1,12 @@
 'use strict'
 
-import path from 'path'
-import nodeResolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
-import babel from 'rollup-plugin-babel'
-import minify from 'rollup-plugin-babel-minify'
-import postcss from 'rollup-plugin-postcss'
-import { name, version, dependencies, peerDependencies } from '../package.json'
+const path = require('path')
+const { nodeResolve } = require('@rollup/plugin-node-resolve')
+const commonjs = require('@rollup/plugin-commonjs')
+const { babel } = require('@rollup/plugin-babel')
+const terser = require('@rollup/plugin-terser')
+const postcss = require('rollup-plugin-postcss')
+const { name, version, dependencies, peerDependencies } = require('../package.json')
 
 const PATHS = {
   INPUT: path.resolve(__dirname, '..', 'components', 'index.js'),
@@ -17,11 +17,10 @@ const PATHS = {
 function camelize(str) {
     return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function(match, index) {
         if (+match === 0) {
-            return ''
+            return '';
         }
-
-        return index == 0 ? match.toLowerCase() : match.toUpperCase()
-    })
+        return index === 0 ? match.toLowerCase() : match.toUpperCase();
+    });
 }
 
 const year = new Date().getFullYear()
@@ -39,13 +38,6 @@ const globals = {
   'react-transition-group': 'ReactTransitionGroup',
   'react-popper': 'ReactPopper',
   'prop-types': 'PropTypes',
-  'lodash.pick': 'pick',
-  'lodash.omit': 'omit',
-  'lodash.isfunction': 'isFunction',
-  'react-datepicker': 'ReactDatePicker',
-  'shortid': 'shortid',
-  'lodash.tonumber': 'toNumber',
-  'nouislider': 'nouislider',
   'classnames': 'classNames'
 }
 
@@ -53,17 +45,25 @@ function createBaseConfig(callback) {
   const baseConfig = {
     input: PATHS.INPUT,
     plugins: [
-      nodeResolve(),
-      commonjs({
-        include: 'node_modules/**' // Workaround for: https://github.com/rollup/rollup-plugin-commonjs/issues/247
+      nodeResolve({
+        extensions: ['.js', '.jsx']
       }),
-      postcss(),
+      commonjs({
+        include: 'node_modules/**'
+      }),
+      postcss({
+        extract: false,
+        modules: false,
+        use: ['sass', 'less', 'stylus'],
+        inject: false
+      }),
       babel({
-        runtimeHelpers: true,
+        babelHelpers: 'bundled',
         presets: [
-          "@babel/env",
-          "@babel/react"
-        ]
+          "@babel/preset-env",
+          "@babel/preset-react"
+        ],
+        exclude: 'node_modules/**'
       })
     ],
     external: Object.keys(Object.assign({}, peerDependencies, dependencies))
@@ -110,7 +110,7 @@ const UMDConfig = createBaseConfig(function(config) {
 })
 
 const MinifiedUMDConfig = createBaseConfig(function(config) {
-  config.plugins.push(minify({ comments: false }))
+  config.plugins.push(terser({ format: { comments: false } }))
 
   return Object.assign({}, config, {
     output: {
