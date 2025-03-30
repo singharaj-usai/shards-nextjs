@@ -1,7 +1,7 @@
 {
-  "name": "shards-react",
-  "version": "1.0.3",
-  "description": "A free, beautiful and modern React UI kit powered by Bootstrap 4 and the Shards UI kit.",
+  "name": "shards-nextjs",
+  "version": "1.0.0",
+  "description": "A Bootstrap 5 and Next.js 15 compatible version of Shards React UI kit.",
   "type": "module",
   "main": "dist/shards-react.common.js",
   "jsnext:main": "dist/shards-react.es.js",
@@ -56,9 +56,9 @@
     "postcss": "^8.4.31",
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^9.3.0",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "prop-types": "^15.8.1",
     "rimraf": "^5.0.5",
     "rollup": "^4.9.6",
     "rollup-plugin-postcss": "^4.0.2"
@@ -78,8 +78,8 @@
     "shortid": "^2.2.16"
   },
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
   },
   "exports": {
     ".": {

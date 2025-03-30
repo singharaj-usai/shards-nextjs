@@ -1,5 +1,5 @@
 /*
-* Shards React v1.0.3 (https://designrevision.com/downloads/shards-react/)
+* Shards React v1.0.0 (https://designrevision.com/downloads/shards-react/)
 * Based on: Bootstrap ^5.3.2 (https://getbootstrap.com)
 * Based on: Shards ^3.0.0 (https://designrevision.com/downloads/shards/)
 * Copyright 2017-2025 DesignRevision (https://designrevision.com)
@@ -6177,4 +6177,4 @@ Tooltip.defaultProps = {
 };
 
 export { Alert, Badge, Breadcrumb, BreadcrumbItem, Button, ButtonGroup, ButtonToolbar, Card, CardBody, CardColumns, CardDeck, CardFooter, CardGroup, CardHeader, CardImg, CardImgOverlay, CardLink, CardSubtitle, CardText, CardTitle, Col, Collapse, Container, DatePicker, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Fade, Form, FormCheckbox, FormFeedback, FormGroup, FormInput, FormRadio, FormSelect, FormTextarea, InputGroup, InputGroupAddon, InputGroupText, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Modal, ModalBody, ModalFooter, ModalHeader, Nav, NavItem, NavLink, Navbar, NavbarBrand, NavbarToggler, Popover, PopoverBody, PopoverHeader, Progress, Row, Slider, Tooltip };
-//# sourceMappingURL=shards-react.es.js.map
+//# sourceMappingURL=shards-nextjs.es.js.map

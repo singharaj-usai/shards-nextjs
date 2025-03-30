@@ -1,5 +1,5 @@
 /*
-* Shards React v1.0.3 (https://designrevision.com/downloads/shards-react/)
+* Shards React v1.0.0 (https://designrevision.com/downloads/shards-react/)
 * Based on: Bootstrap ^5.3.2 (https://getbootstrap.com)
 * Based on: Shards ^3.0.0 (https://designrevision.com/downloads/shards/)
 * Copyright 2017-2025 DesignRevision (https://designrevision.com)
@@ -8,7 +8,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('lodash.omit'), require('lodash.pick'), require('react-transition-group'), require('lodash.isfunction'), require('react-datepicker'), require('react-popper'), require('shortid'), require('lodash.tonumber'), require('nouislider')) :
   typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'lodash.omit', 'lodash.pick', 'react-transition-group', 'lodash.isfunction', 'react-datepicker', 'react-popper', 'shortid', 'lodash.tonumber', 'nouislider'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["shards-React"] = {}, global.React, global.classNames, global.ReactDOM, global.omit, global.pick, global.ReactTransitionGroup, global.isFunction, global.ReactDatePicker, global.ReactPopper, global.shortid, global.toNumber, global.nouislider));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["shards-Nextjs"] = {}, global.React, global.classNames, global.ReactDOM, global.omit, global.pick, global.ReactTransitionGroup, global.isFunction, global.ReactDatePicker, global.ReactPopper, global.shortid, global.toNumber, global.nouislider));
 })(this, (function (exports, React, classNames, ReactDOM, omit, pick, reactTransitionGroup, isFunction, ReactDatePicker, reactPopper, shortid, toNumber, nouislider) { 'use strict';
 
   function _assertThisInitialized(e) {
@@ -6232,4 +6232,4 @@
   exports.Tooltip = Tooltip;
 
 }));
-//# sourceMappingURL=shards-react.umd.js.map
+//# sourceMappingURL=shards-nextjs.umd.js.map

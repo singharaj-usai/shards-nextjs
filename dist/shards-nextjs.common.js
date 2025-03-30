@@ -1,5 +1,5 @@
 /*
-* Shards React v1.0.3 (https://designrevision.com/downloads/shards-react/)
+* Shards React v1.0.0 (https://designrevision.com/downloads/shards-react/)
 * Based on: Bootstrap ^5.3.2 (https://getbootstrap.com)
 * Based on: Shards ^3.0.0 (https://designrevision.com/downloads/shards/)
 * Copyright 2017-2025 DesignRevision (https://designrevision.com)
@@ -6239,4 +6239,4 @@ exports.Progress = Progress;
 exports.Row = Row;
 exports.Slider = Slider;
 exports.Tooltip = Tooltip;
-//# sourceMappingURL=shards-react.common.js.map
+//# sourceMappingURL=shards-nextjs.common.js.map
