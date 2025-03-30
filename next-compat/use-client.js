@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import * as ShardsReact from '../dist/shards-react.next.js';
+import * as ShardsReact from '../dist/shards-nextjs.next.js';
 
 // Export all components with 'use client' directive
 export const {

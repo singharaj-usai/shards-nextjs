@@ -8,7 +8,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('classnames'), require('react-dom'), require('lodash.omit'), require('lodash.pick'), require('react-transition-group'), require('lodash.isfunction'), require('react-datepicker'), require('react-popper'), require('shortid'), require('lodash.tonumber'), require('nouislider')) :
   typeof define === 'function' && define.amd ? define(['exports', 'react', 'classnames', 'react-dom', 'lodash.omit', 'lodash.pick', 'react-transition-group', 'lodash.isfunction', 'react-datepicker', 'react-popper', 'shortid', 'lodash.tonumber', 'nouislider'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["shards-Nextjs"] = {}, global.React, global.classNames, global.ReactDOM, global.omit, global.pick, global.ReactTransitionGroup, global.isFunction, global.ReactDatePicker, global.ReactPopper, global.shortid, global.toNumber, global.nouislider));
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["@Singharaj-Usai/Shards-Nextjs"] = {}, global.React, global.classNames, global.ReactDOM, global.omit, global.pick, global.ReactTransitionGroup, global.isFunction, global.ReactDatePicker, global.ReactPopper, global.shortid, global.toNumber, global.nouislider));
 })(this, (function (exports, React, classNames, ReactDOM, omit, pick, reactTransitionGroup, isFunction, ReactDatePicker, reactPopper, shortid, toNumber, nouislider) { 'use strict';
 
   function _assertThisInitialized(e) {

@@ -79,7 +79,7 @@ const CommonJSConfig = createBaseConfig(function(config) {
       name: camelize(name),
       sourcemap: true,
       format: 'cjs',
-      file: path.resolve(PATHS.DIST, `${name}.common.js`)
+      file: path.resolve(PATHS.DIST, `shards-nextjs.common.js`)
     }
   })
 })
@@ -91,7 +91,7 @@ const ESModulesConfig = createBaseConfig(function(config) {
       name: camelize(name),
       sourcemap: true,
       format: 'es',
-      file: path.resolve(PATHS.DIST, `${name}.es.js`)
+      file: path.resolve(PATHS.DIST, `shards-nextjs.es.js`)
     }
   })
 })
@@ -104,7 +104,7 @@ const UMDConfig = createBaseConfig(function(config) {
       sourcemap: true,
       globals: globals,
       format: 'umd',
-      file: path.resolve(PATHS.DIST, `${name}.umd.js`)
+      file: path.resolve(PATHS.DIST, `shards-nextjs.umd.js`)
     }
   })
 })
@@ -119,7 +119,7 @@ const MinifiedUMDConfig = createBaseConfig(function(config) {
       sourcemap: true,
       globals: globals,
       format: 'umd',
-      file: path.resolve(PATHS.DIST, `${name}.umd.min.js`)
+      file: path.resolve(PATHS.DIST, `shards-nextjs.umd.min.js`)
     }
   })
 })

@@ -19,7 +19,7 @@
     "prebuild": "npm run clean && npm run lint",
     "build": "rollup --bundleConfigAsCjs --c build/rollup.config.js && bundlesize",
     "build:win": "build.bat",
-    "build:next": "rollup --bundleConfigAsCjs --c build/rollup.config.js --format esm --file dist/shards-react.next.js",
+    "build:next": "rollup --bundleConfigAsCjs --c build/rollup.config.js --format esm --file dist/shards-nextjs.next.js",
     "lint": "eslint --config .eslintrc.cjs components",
     "clean": "rimraf dist",
     "dev": "rollup --bundleConfigAsCjs --c build/rollup.config.js --watch"
@@ -39,7 +39,7 @@
   ],
   "bundlesize": [
     {
-      "path": "./dist/*.js"
+      "path": "./dist/shards-nextjs*.js"
     }
   ],
   "devDependencies": {
